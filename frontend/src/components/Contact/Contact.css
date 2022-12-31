@@ -1,0 +1,66 @@
+.Contact{
+    /* background:linear-gradient( to right,rgba(0, 255, 255, 0.192) 50%,white 50% ); */
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.Contact .ContactInner{
+    width: 100vw;
+    height: 50vh; 
+    background-color:#E9322A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactData{
+    width: 30vw;
+    color: white;
+}
+
+.contactData h2,.contactData p{
+    margin: 0px;
+}
+.contactData p{
+    margin-bottom: 20px;
+}
+
+.contactDataTopic{
+    display: flex;
+    align-items: center;
+}
+
+.contactDataTopic img{
+    margin-right: 20px;
+}
+
+.ContactForm div{
+    background-color: white;
+    width: 30vw;
+    height: 50vh;
+    padding: 50px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.ContactForm input,textarea{
+    border: none; 
+    outline: 0;
+    width: 100%;
+    padding: 10px 10px 2px 10px;
+    border-bottom: 2px solid black;
+}
+
+.ContactForm #messageBtn{
+    margin-top: 20px;
+    background-color: #E9322A;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ContactForm #messageBtn:hover{
+    transform: scale(1.1);
+}

@@ -1,0 +1,54 @@
+.About{
+    background:linear-gradient( to right,rgba(0, 255, 255, 0.192) 50%,white 50% );
+    height: 92vh;
+}
+
+.About .AboutInner{
+    padding: 100px 60px 60px 60px;
+    margin:auto;
+    width: 60%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.385);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.About .About1Half{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.About #profilePic{
+    margin-bottom: 30px;
+    aspect-ratio: 3/2;
+    
+}
+
+.About h3{
+    margin: 0px;
+}
+.About h1{
+    margin: 0px;
+    color: blue;
+}
+
+.About .About1Half a{
+    text-decoration:none;
+    color: black;
+}
+
+
+.About .detailsTopic{
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.About table h2{
+    margin: 10px 0px 0px 0px;
+}
+
+.About tr td{
+    width: 200px;
+}

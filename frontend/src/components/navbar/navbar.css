@@ -1,0 +1,23 @@
+.Navbar{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.Navbar #textLogo{
+    font-size: 30px;
+    margin-left: 40px;
+    font-weight: bolder;
+}
+.Navbar ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 40vw;
+    margin-right: 50px;
+}
+.Navbar ul li{
+    cursor: pointer;
+}
