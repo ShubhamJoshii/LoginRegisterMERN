@@ -48,12 +48,11 @@ function Register() {
 
     const handleRegister = async(e)=>{
       e.preventDefault();
-      try{
-        const {name,email,phone,work,password,Cpassword} = registerData;
-        if(!name || !email || !phone || !work || !password || !Cpassword || password.length <= 8 || Cpassword.length<=8){
-          document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red";
-          document.getElementsByClassName("inputPassword")[1].style.backgroundColor="red";
-          alert("Fill Form Properly")
+      const {name,email,phone,work,password,Cpassword} = registerData;
+      if(!name || !email || !phone || !work || !password || !Cpassword || password.length < 8 || Cpassword.length < 8){
+        document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red";
+        document.getElementsByClassName("inputPassword")[1].style.backgroundColor="red";
+        alert("Fill Form Properly")
         }
         else if(!(password === Cpassword)){
           document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red";
@@ -64,20 +63,21 @@ function Register() {
           document.getElementsByClassName("inputPassword")[0].style.backgroundColor="#00a4b36b";
           document.getElementsByClassName("inputPassword")[1].style.backgroundColor="#00a4b36b";
           console.log(registerData);
-          const res = await fetch("/register",{
-            "method":"POST",
-            "headers":{
-              "Content-Type":"application/json"
-            },
-            "body":JSON.stringify({name,email,phone,work,password,Cpassword})
-          })
-          await res.json();
-          alert("User Registered")
-          navigate("/login")
+          try{
+            const res = await fetch("/register",{
+              "method":"POST",
+              "headers":{
+                "Content-Type":"application/json"
+              },
+              "body":JSON.stringify({name,email,phone,work,password,Cpassword})
+            })
+            await res.json();
+            alert("User Registered")
+            navigate("/login")
+          } catch(err){
+            console.log(err)
+          }
         }
-      } catch(err){
-        console.log(err)
-      }
     }
 
   return (
