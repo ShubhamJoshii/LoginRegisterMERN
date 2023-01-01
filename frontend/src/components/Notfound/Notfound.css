@@ -1,6 +1,6 @@
 .NotFound{
     background: linear-gradient( to right,rgba(0, 255, 255, 0.192) 50%,white 50% );
-    height: 90vh;
+    height: 94vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

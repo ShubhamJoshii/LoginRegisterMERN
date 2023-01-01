@@ -1,6 +1,6 @@
 .Contact{
     /* background:linear-gradient( to right,rgba(0, 255, 255, 0.192) 50%,white 50% ); */
-    height: 90vh;
+    height: 94vh;
     display: flex;
     align-items: center;
 }
@@ -63,4 +63,31 @@
 }
 .ContactForm #messageBtn:hover{
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 880px) {
+
+    .Contact .ContactInner{
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .ContactForm div{
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .ContactForm div{
+        width: 70vw;
+    }
+    .Contact .ContactInner{
+        margin: auto;
+        width: 60vw;
+        height: 94vh;
+    }
+    .contactData{
+        display: none;
+    }
 }

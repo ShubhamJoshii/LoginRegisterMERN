@@ -18,10 +18,9 @@ function Navbar() {
     })
   }
   return (
-
     <div className='Navbar'>
-      <div id="textLogo">SHUBHAM JOSHI</div>
-      <ul>
+      <div id="textLogo"  onClick={()=>{navigate("/")}}>SHUBHAM JOSHI</div>
+      <ul className='headerTopic'>
         <li onClick={()=>{navigate("/")}}>Home</li>
         <li onClick={()=>{navigate("/about")}}>About Me</li>
         <li onClick={()=>{navigate("/contact")}}>Contact</li>
@@ -29,6 +28,11 @@ function Navbar() {
         <li onClick={()=>{navigate("/login")}} id="LoginBTN">Login</li>
         <li onClick={logoutBtn} id="LogoutBTN">Logout</li>
       </ul>
+      <div className="burger">
+        <div className="lines"></div>
+        <div className="lines"></div>
+        <div className="lines"></div>
+      </div>
     </div>
   )
 }

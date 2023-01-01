@@ -1,23 +1,69 @@
-.Navbar{
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+.Navbar {
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 6vh;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99999;
 }
-.Navbar #textLogo{
-    font-size: 30px;
-    margin-left: 40px;
-    font-weight: bolder;
+.Navbar #textLogo {
+  font-size: 30px;
+  margin-left: 40px;
+  font-weight: bolder;
 }
-.Navbar ul{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 40vw;
-    margin-right: 50px;
+.Navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  width: 40vw;
+  margin-right: 50px;
 }
-.Navbar ul li{
+.Navbar ul li {
+  cursor: pointer;
+}
+
+.Navbar .burger {
+  display: none;
+  position: fixed;
+  right: 20px;
+}
+.Navbar .lines {
+  background-color: white;
+  width: 30px;
+  margin-bottom: 5px;
+  height: 5px;
+}
+
+@media only screen and (max-width: 829px) {
+  .Navbar .burger {
+    display: block;
     cursor: pointer;
+  }
+
+  .Navbar .headerTopic {
+    display: none;
+    padding: 10px 0px;
+    width: 110px;
+    top: 25px;
+    right: -40px;
+    background-color: rgba(0, 0, 0, 0.54);
+    position: fixed;
+    flex-direction: column;
+  }
+
+    .Navbar:hover .headerTopic {
+    display: block;
+  }
+
+  .Navbar li {
+    /* display: none; */
+    padding: 2px 15px;
+  }
+  .Navbar li:hover {
+    background-color: black;
+  }
+  .Navbar #LogoutBTN {
+    display: none;
+  }
 }

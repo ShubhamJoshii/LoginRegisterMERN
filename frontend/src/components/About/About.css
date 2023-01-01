@@ -1,6 +1,6 @@
 .About{
     background:linear-gradient( to right,rgba(0, 255, 255, 0.192) 50%,white 50% );
-    height: 92vh;
+    height: 94vh;
 }
 
 .About .AboutInner{
@@ -51,4 +51,29 @@
 
 .About tr td{
     width: 200px;
+}
+
+@media only screen and (max-width: 643px){
+    .About .AboutInner{
+        width: 70vw;
+        flex-direction: column;
+        padding-bottom: 100px;
+        /* height: 100%; */
+    }
+    .About .About1Half{
+        margin: 0;
+        align-items: center;
+    }
+    .About .About1Half img{
+        border-radius: 50%;
+    }
+    .About .About1Half a,.About .About1Half h3{
+        display: none;
+    }
+/* 
+    .About2Half{
+    } */
+    .About2Half h1, h3{
+        text-align: center;
+    }
 }
