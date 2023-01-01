@@ -22,26 +22,30 @@ function Login() {
   const handleLoginSave = async(e)=>{
     e.preventDefault()
     const {email, password} = userInput;
-    try{
-      const res = await fetch("/login",{
-        "headers":{
-          "Content-Type":"application/json",
-        },
-        "method":"POST",
-        "body":JSON.stringify({email,password})
-      })
-      await res.json();
-      alert("User Login")
-
-      navigate("/")
-    } catch(err){
-      alert("User Not Registered")
-      console.log(err)
-
+    if(password.length >= 8){
+      document.getElementsByClassName("inputPassword")[0].style.backgroundColor="#00a4b36b"
+      document.getElementsByClassName("inputForm")[0].style.backgroundColor="#00a4b36b"
+      try{
+        const res = await fetch("/login",{
+          "headers":{
+            "Content-Type":"application/json",
+          },
+          "method":"POST",
+          "body":JSON.stringify({email,password})
+        })
+        await res.json();
+        alert("User Login")
+        navigate("/")
+      } catch(err){
+        document.getElementsByClassName("inputForm")[0].style.backgroundColor="red"
+        alert("User Not Registered")
+        console.log(err);
+      }
     }
-
-
-
+    else{
+      document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red"
+      alert("Invalid Password")
+    }
   }
   useEffect(()=>{
   console.log(userInput);
@@ -52,11 +56,11 @@ const passwordShow = ()=>{
   let b = document.getElementById("passwordShow");
   if(a.type === "password"){
     a.type="text";
-    b.src=EyeClose;
+    b.src=Eyeopen;  
   }
   else{
     a.type="password";
-    b.src=Eyeopen;  
+    b.src=EyeClose;
   }
 }
   return (
@@ -71,7 +75,7 @@ const passwordShow = ()=>{
         <div className="inputForm inputPassword">
           <img src={LockLogo} alt="userLogo" id="logoPassword" width="17px" />
           <input type="password" placeholder="Password" id="password" name="password" onChange={handleLoginInput} />
-          <img src={Eyeopen} width="20px" alt="passwordShow" onClick={passwordShow} id="passwordShow"/>
+          <img src={EyeClose} width="20px" alt="passwordShow" onClick={passwordShow} id="passwordShow"/>
         </div>
         <input type="submit" value="Login" id="loginBtn" onClick={handleLoginSave}/>
       </form>

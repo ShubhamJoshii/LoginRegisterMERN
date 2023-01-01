@@ -20,11 +20,11 @@ function Register() {
     let b = document.getElementById("passwordShow");
     if(a.type === "password"){
       a.type="text";
-      b.src=EyeClose;
+      b.src=Eyeopen;  
     }
     else{
       a.type="password";
-      b.src=Eyeopen;  
+      b.src=EyeClose;
     }  
   }
 
@@ -33,11 +33,11 @@ function Register() {
     let b = document.getElementById("ConfirmpasswordShow");
     if(a.type === "password"){
       a.type="text";
-      b.src=EyeClose;
+      b.src=Eyeopen;  
     }
     else{
       a.type="password";
-      b.src=Eyeopen;  
+      b.src=EyeClose;
     }}
 
     const handleInputRegister = (e)=>{
@@ -50,20 +50,31 @@ function Register() {
       e.preventDefault();
       try{
         const {name,email,phone,work,password,Cpassword} = registerData;
-        if(!name || !email || !phone || !work || !password || !Cpassword){
+        if(!name || !email || !phone || !work || !password || !Cpassword || password.length <= 8 || Cpassword.length<=8){
+          document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red";
+          document.getElementsByClassName("inputPassword")[1].style.backgroundColor="red";
           alert("Fill Form Properly")
         }
-        console.log(registerData);
-        const res = await fetch("/register",{
-          "method":"POST",
-          "headers":{
-            "Content-Type":"application/json"
-          },
-          "body":JSON.stringify({name,email,phone,work,password,Cpassword})
-        })
-        await res.json();
-        alert("User Registered")
-        navigate("/login")
+        else if(!(password === Cpassword)){
+          document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red";
+          document.getElementsByClassName("inputPassword")[1].style.backgroundColor="red";
+          alert("Invaild Password");
+        }
+        else{
+          document.getElementsByClassName("inputPassword")[0].style.backgroundColor="#00a4b36b";
+          document.getElementsByClassName("inputPassword")[1].style.backgroundColor="#00a4b36b";
+          console.log(registerData);
+          const res = await fetch("/register",{
+            "method":"POST",
+            "headers":{
+              "Content-Type":"application/json"
+            },
+            "body":JSON.stringify({name,email,phone,work,password,Cpassword})
+          })
+          await res.json();
+          alert("User Registered")
+          navigate("/login")
+        }
       } catch(err){
         console.log(err)
       }
@@ -93,12 +104,12 @@ function Register() {
         <div className="registerForm inputPassword">
           <img src={LockLogo} alt="userLogo" width="17px" id='logoPassword'/>
           <input type="password" placeholder="Password" id='password' name='password' onChange={handleInputRegister}/>
-          <img src={Eyeopen} width="20px" alt="passwordShow" onClick={passwordShow} id="passwordShow"/>
+          <img src={EyeClose} width="20px" alt="passwordShow" onClick={passwordShow} id="passwordShow"/>
         </div>
         <div className="registerForm inputPassword">
           <img src={LockLogo} alt="userLogo" width="17px"  id='logoPassword'/>
           <input type="password" placeholder="Confirm Password" id='Confirmpassword' name='Cpassword'  onChange={handleInputRegister}/>
-          <img src={Eyeopen} width="20px" alt="passwordShow" onClick={ConfirmpasswordShow} id="ConfirmpasswordShow"/>
+          <img src={EyeClose} width="20px" alt="passwordShow" onClick={ConfirmpasswordShow} id="ConfirmpasswordShow"/>
 
         </div>
         <input type="submit" value="Register" id="loginBtn" onClick={handleRegister}/>
