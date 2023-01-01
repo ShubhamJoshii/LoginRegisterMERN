@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
-const SECRET_KEY = "SHUBAHMJOSHIISAGOODBOYQWERTYUIOPAS"
-
-mongoose.connect("mongodb+srv://MernProject:ske5QoqNrtXpd4yE@mernproject.y30y9v4.mongodb.net/MernProject?retryWrites=true&w=majority",{
+const {SECRET_KEY,DataBase} = require("./config/keys")
+mongoose.connect(DataBase,{
     useNewUrlParser: true,
     useUnifiedTopology : true
 }).then(()=>{

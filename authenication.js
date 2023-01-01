@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("./Database");
-const SECRET_KEY = "SHUBAHMJOSHIISAGOODBOYQWERTYUIOPAS"
+
+const {SECRET_KEY} = require("./config/keys")
 const Authenication = async (req,res,next)=>{
     try{
         const token = req.cookies.jwtoken;

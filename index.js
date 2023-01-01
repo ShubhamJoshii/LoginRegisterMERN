@@ -9,10 +9,13 @@ app.use(cookieParser())
 
 //Without This req.body will be null
 app.use(express.json());
-app.get("/",(req,res)=>{
-    app.use(express.static(path.resolve(__dirname,"frontend/build")));
-    res.status(200).sendFile(path.resolve(__dirname,"frontend/build"));  
-})
+
+if(process.env.NODE_ENV == "production"){
+    app.get("/",(req,res)=>{
+        app.use(express.static(path.resolve(__dirname,"frontend/build")));
+        res.status(200).sendFile(path.resolve(__dirname,"frontend/build"));  
+    })
+}
 const User = require("./Database")
 
 app.use(require("./auth.js"))
