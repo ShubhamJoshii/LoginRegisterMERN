@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.4ff3ff3a.css",
-    "main.js": "/static/js/main.83c5a1f8.js",
+    "main.css": "/static/css/main.2b73f57f.css",
+    "main.js": "/static/js/main.526d2799.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/Img.png": "/static/media/Img.4e0f23ca65822b2e7ace.png",
     "static/media/profile.png": "/static/media/profile.65c83b2c998f0d638ced.png",
     "static/media/Hours.png": "/static/media/Hours.84f4ae1b7776c026e7e6.png",
-    "static/media/Shubham.jpg": "/static/media/Shubham.35cfad58fe8b67db1be9.jpg",
+    "static/media/Shubham.jpg": "/static/media/Shubham.8b94be1024e3ea5ef369.jpg",
     "static/media/location.png": "/static/media/location.9bdbf55995a92ded850b.png",
     "static/media/phone.png": "/static/media/phone.021b1b7d183635df7d81.png",
     "static/media/email.png": "/static/media/email.dc12b367952d21bde534.png",
@@ -15,12 +15,12 @@
     "static/media/userLogo.png": "/static/media/userLogo.f084cffb3e3785110a05.png",
     "static/media/eyeOpen.png": "/static/media/eyeOpen.49c32772de90ed3977e6.png",
     "index.html": "/index.html",
-    "main.4ff3ff3a.css.map": "/static/css/main.4ff3ff3a.css.map",
-    "main.83c5a1f8.js.map": "/static/js/main.83c5a1f8.js.map",
+    "main.2b73f57f.css.map": "/static/css/main.2b73f57f.css.map",
+    "main.526d2799.js.map": "/static/js/main.526d2799.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ff3ff3a.css",
-    "static/js/main.83c5a1f8.js"
+    "static/css/main.2b73f57f.css",
+    "static/js/main.526d2799.js"
   ]
 }
