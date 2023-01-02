@@ -16,7 +16,8 @@ router.get("/home", Authenication, async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const { name, email, phone, work, password, Cpassword } = req.body;
+  const { name, email, phone, work, password, Cpassword,instagram,facebook,github,linkedin,twitter} = req.body;
+  
   if (!name || !email || !phone || !work || !password || !Cpassword) {
     return res.send({ message: "Fill Form Properly" });
   }
@@ -30,6 +31,11 @@ router.post("/register", async (req, res) => {
         work,
         password,
         Cpassword,
+        instagram,
+        facebook,
+        github,
+        linkedin,
+        twitter
       });
       const data = await userData.save();
       res.send({ message: "User Registered" });

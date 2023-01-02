@@ -58,6 +58,26 @@ const userSchema = new mongoose.Schema({
             }
         }
     ],
+    instagram:{
+        type:String,
+        require:true
+    },
+    facebook:{
+        type:String,
+        require:true
+    },
+    github:{
+        type:String,
+        require:true
+    },
+    linkedin:{
+        type:String,
+        require:true
+    },
+    twitter:{
+        type:String,
+        require:true
+    },
     tokens:[{
         token:{
             type:String,
@@ -71,9 +91,11 @@ userSchema.pre("save",async function(next){
         this.password = await bcrypt.hash(this.password,12)
         this.Cpassword = await bcrypt.hash(this.Cpassword,12)
         console.log(this);
+
     }
     next();
 })
+
 
 // Token
 userSchema.methods.generateAuthToken =async function(){

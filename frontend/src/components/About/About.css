@@ -22,12 +22,36 @@
 
 .About #profilePic{
     margin-bottom: 30px;
-    aspect-ratio: 3/2;
-    
+    aspect-ratio: 3/2;    
+}
+
+/* 
+.profile{
+    position: relative;
+} */
+
+.picChange{
+    position: relative;
+    margin-top: -60px;
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.414);
+    color: white;
+    border: none;
+    padding:5px 5%;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.picChange:hover{
+    transform: scale(1.01);
+
 }
 
 .About h3{
     margin: 0px;
+    font-weight: bolder;
+    font-size: 25px;
 }
 .About h1{
     margin: 0px;
@@ -37,6 +61,12 @@
 .About .About1Half a{
     text-decoration:none;
     color: black;
+    font-family: cursive;
+    font-weight: 700;
+}
+
+.About .About1Half a:hover{
+    color: red;
 }
 
 

@@ -35,13 +35,16 @@ function About() {
     <div className='About'>
     <div className='AboutInner'>
       <div className='About1Half'>
+      {/* <div className='profile'> */}
         <img src={ cokkiesData.name === "Shubham Joshi"? shubham :profile} id="profilePic" alt="profilePic" width="250px" />
+        <button className='picChange'>Upload Photo</button>
+      {/* </div> */}
         <h3>Social Media</h3>
-        <a href="/">Instagram</a>
-        <a href="/">Facebook</a>
-        <a href="/">Github</a>
-        <a href="/">Linkedin</a>
-        <a href="/">Twitter</a>
+        <a href={cokkiesData.instagram} target="_blank">Instagram</a>
+        <a href={cokkiesData.facebook} target="_blank">Facebook</a>
+        <a href={cokkiesData.github} target="_blank">Github</a>
+        <a href={cokkiesData.linkedin} target="_blank">Linkedin</a>
+        <a href={cokkiesData.twitter} target="_blank">Twitter</a>
       </div>
       <div className='About2Half'>
         <div>

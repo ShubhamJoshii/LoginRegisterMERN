@@ -7,12 +7,14 @@ import Eyeopen from "../img/eyeOpen.png";
 import EyeClose from "../img/eyeClose.png";
 import phone from "../img/phone.png";
 import email from "../img/email.png";
+import dropDown from "../img/dropDown.png";
 import {useNavigate} from "react-router-dom";
+import { useEffect } from 'react';
 
 
 function Register() {
   const [registerData ,setRegisterData] = useState({
-    name:"",email:"",phone:"",work:"",password:"",Cpassword:""
+    name:"",email:"",phone:"",work:"",password:"",Cpassword:"",instagram:"",facebook:"",github:"",linkedin:"",twitter:""
   })
   const navigate = useNavigate();
   const passwordShow = ()=>{
@@ -46,9 +48,13 @@ function Register() {
       setRegisterData({...registerData,[name]:value});
     }
 
+    useEffect(()=>{
+      console.log(registerData)
+    })
+
     const handleRegister = async(e)=>{
       e.preventDefault();
-      const {name,email,phone,work,password,Cpassword} = registerData;
+      const {name,email,phone,work,password,Cpassword,instagram,facebook,github,linkedin,twitter} = registerData;
       if(!name || !email || !phone || !work || !password || !Cpassword || password.length < 8 || Cpassword.length < 8){
         document.getElementsByClassName("inputPassword")[0].style.backgroundColor="red";
         document.getElementsByClassName("inputPassword")[1].style.backgroundColor="red";
@@ -69,7 +75,7 @@ function Register() {
               "headers":{
                 "Content-Type":"application/json"
               },
-              "body":JSON.stringify({name,email,phone,work,password,Cpassword})
+              "body":JSON.stringify({name,email,phone,work,password,Cpassword,instagram,facebook,github,linkedin,twitter})
             })
             await res.json();
             alert("User Registered")
@@ -78,6 +84,11 @@ function Register() {
             console.log(err)
           }
         }
+    }
+    const dropDownMenu = (e)=>{
+      e.preventDefault()
+      const menu = document.getElementsByClassName("dropDownMenu")[0];
+      menu.style.display === "none" ? menu.style.display="block" : menu.style.display="none";
     }
 
   return (
@@ -110,7 +121,29 @@ function Register() {
           <img src={LockLogo} alt="userLogo" width="17px"  id='logoPassword'/>
           <input type="password" placeholder="Confirm Password" id='Confirmpassword' name='Cpassword'  onChange={handleInputRegister}/>
           <img src={EyeClose} width="20px" alt="passwordShow" onClick={ConfirmpasswordShow} id="ConfirmpasswordShow"/>
-
+        </div>
+        <button className='dropDownBTN' onClick={dropDownMenu}>Social Media <img src={dropDown} alt="" width="12px" /> </button>
+        <div className='dropDownMenu' style={{display:"none"}}>
+        <div>
+          <label htmlFor="instagram">Instagram</label>
+          <input type="text" name='instagram'  placeholder='Paste Instagram URL' onChange={handleInputRegister}/><br />
+        </div>
+        <div>
+          <label htmlFor="facebook">Facebook</label>
+          <input type="text" name='facebook' placeholder='Paste Facebook URL' onChange={handleInputRegister}/><br />
+        </div>
+        <div>
+          <label htmlFor="github">Github</label>
+          <input type="text" name='github'  placeholder='Paste Github URL' onChange={handleInputRegister}/><br />
+        </div>
+        <div>
+          <label htmlFor="linkedin">Linkedin</label>
+          <input type="text" name='linkedin' placeholder='Paste Linkedin URL' onChange={handleInputRegister}/><br />
+        </div>
+        <div>
+          <label htmlFor="twitter">Twitter</label>
+          <input type="text" name='twitter' placeholder='Paste Twitter URL' onChange={handleInputRegister}/><br />
+        </div>
         </div>
         <input type="submit" value="Register" id="loginBtn" onClick={handleRegister}/>
       </form>

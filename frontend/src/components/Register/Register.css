@@ -77,6 +77,50 @@
     cursor: pointer;
 }
 
+.dropDownBTN{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    /* color: white; */
+    font-weight: bolder ;
+    font-size: 17px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.dropDownBTN img{
+    margin-left: 5px;
+    filter: invert();
+}
+
+.dropDownMenu{
+    margin-left: 30px;
+}
+
+.dropDownMenu div label{
+    width: 30%;
+}
+
+.dropDownMenu div input{
+    width:65%;
+    padding: 5px;
+    background-color:#00a4b36b;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    outline: none;
+    color: white;
+}
+
+.dropDownMenu div{
+    display: flex;
+    margin: 10px 0px;
+
+}
+
 @media only screen and (max-width: 500px) {
     .Register{
         width: 90vw;
